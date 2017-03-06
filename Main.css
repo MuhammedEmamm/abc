@@ -1,0 +1,40 @@
+*
+{
+    font-family: cursive ; 
+    font-size: 17px;
+}
+#CF
+{
+    border: 2px thick black ; 
+    background-color: bisque;
+    height:  auto ; 
+    width: auto ; 
+    margin : 200px 200px 200px 200px; 
+    padding:  inherit ; 
+    text-align: center;
+}
+a:hover 
+{
+    color:burlywood;
+}
+a:link 
+{
+    color: black;
+    text-decoration: none ; 
+}
+p
+{
+    font-family: sans-serif ; 
+    font-size: 25px ;
+    color:floralwhite;
+    margin: 10px 10px 10px 10px ;
+}
+h1
+{
+    font-family :fantasy ; 
+    color :floralwhite ;
+    font-size: 78px ; 
+    margin:  70px 70px 70px 70px  ; 
+    text-align:  center ; 
+    
+}

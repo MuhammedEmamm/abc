@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="Main.css" /> 
+    
+        <link rel="icon" href="http://convertico.com/images/58bcc9606c2f2/_previmg.png">
+        <title>
+        Contests - Codeforces.
+        </title>
+    </head>
+    
+    <body background ="https://wallpaperscraft.com/image/texture_brick_wall_82476_1920x1080.jpg" >
+    <h1>Codeforces Contests List</h1>
+   
+        <script>
+        var yala ; 
+            confirm("Eh El Gabak Hena?") ; 
+        var s  = "http://codeforces.com/contests"; 
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', "http://codeforces.com/api/contest.list?gym=false&lang=en", true);
+        xhr.send() ; 
+        xhr.onreadystatechange = processRequest;
+        function processRequest(e){
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                     yala = response.result  ;
+                    console.log(response.result) ; 
+                    var table = document.getElementById("CF") ; 
+                  for(var i =yala.length-1 ; i>=0 ; i--)
+                      {
+                          var row = table.insertRow(-1) ; 
+                          row.id = yala[i].id ; 
+                          var cell = row.insertCell(-1) ; 
+                          var cell1 = row.insertCell(-1) ;
+                          var cell2 = row.insertCell(-1) ; 
+                          var cell3 = row.insertCell(-1) ; 
+                          var cell4 = row.insertCell(-1) ;
+                          cell.innerHTML = yala[i].id ; 
+                          cell1.innerHTML= "<a href =' "+ s +" ' >" + yala[i].name + "</a> " ; 
+                          cell2.innerHTML = yala[i].durationSeconds ;
+                          cell3.innerHTML = yala[i].startTimeSeconds ;
+                          cell4.innerHTML = yala[i].phase ; 
+                          if(yala[i].phase==="BEFORE")
+                              {
+                                  cell4.style.color ="green"; 
+                              }
+                          else{
+                              cell4.style.color = "red" ; 
+                          }
+                      }
+                }
+        }
+        </script>
+        <table id = "CF" , border = "5px">
+        <thead>
+            <tr>
+            <th id ="ID"><strong>ID</strong></th>
+            <th><strong>Name</strong></th>
+            <th><strong>Duration</strong></th>
+            <th><strong>StartAt</strong></th>
+            <th><strong>Phase</strong></th>
+            </tr>
+            </thead> 
+        </table>
+        <p>CodeforcesConteslist (c) Copyright 2017-2017 Muhammed Emamm
+         The only programming contests Web 2.0 platform
+          Server time: Mar/06/2017 03:24:13UTC+2 (c4).
+            Desktop version, switch to mobile version.</p>
+        
+    </body>
+    
+    
+    
+    
+</html>
